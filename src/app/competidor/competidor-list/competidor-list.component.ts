@@ -15,8 +15,7 @@ export class CompetidorListComponent implements OnInit {
 
   constructor(
     private competidorService: CompetidorService,
-    private routerPath: Router,
-    private router: ActivatedRoute,
+    private router: Router,
     ) { }
 
   getCompetidores(): void {
@@ -28,5 +27,22 @@ export class CompetidorListComponent implements OnInit {
   ngOnInit() {
     this.getCompetidores();
   }
+
+  navegarClassicAlarm(){
+    this.router.navigate([`/alarmaClasica/`])
+  }
+  
+  navegarVoiceAlarm(){
+    this.router.navigate([`/alarmaVoz/`])  
+  }
+
+  navegarPersonalizedAlarm(){
+    this.router.navigate([`/main-menu/`])  
+  }
+
+  navegarAlarmList(){
+    this.router.navigate([`/main-menu/`])  
+  }
+
 
 }

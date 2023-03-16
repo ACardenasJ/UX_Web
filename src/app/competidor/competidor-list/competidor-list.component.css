@@ -87,3 +87,18 @@
 .btnAct:hover{
   color:white;
 }
+
+
+.menu-izquierda {
+  float: left;
+  width: 300px;
+  border: thin solid gray;
+  padding: 10px;
+}
+
+.menu-derecha {
+  float: right;
+  width: 430px;
+  border: thin solid gray;
+  padding: 10px;
+}

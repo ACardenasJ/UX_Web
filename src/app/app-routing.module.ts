@@ -21,28 +21,23 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'signin',
-    component: UsuarioLoginComponent,
-    pathMatch: 'full'
-  },
-  {
     path: 'main-menu',
     component: UsuarioSignupComponent,
     pathMatch: 'full'
   },
   {
-
     path: 'alarmaClasica',
     component: CompetidorListComponent
+  },
+  {
+    path: 'alarmaVoz',
+    component: EventoDeportivoCreateComponent
   },
   {
     path: 'eventosd/:userId/:userToken',
     component: EventoDeportivoListComponent
   },
-  {
-    path: 'eventosd/crear/:userId/:userToken',
-    component: EventoDeportivoCreateComponent
-  },
+
   {
     path: 'carreras/:userId/:userToken',
     component: CarreraListComponent

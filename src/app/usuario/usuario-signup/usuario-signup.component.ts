@@ -69,7 +69,7 @@ export class UsuarioSignupComponent implements OnInit {
   }
   
   navegarVoiceAlarm(){
-    this.router.navigate([`/main-menu/`])  
+    this.router.navigate([`/alarmaVoz/`])  
   }
 
   navegarPersonalizedAlarm(){

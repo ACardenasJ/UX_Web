@@ -22,6 +22,7 @@ export class EventoDeportivoCreateComponent implements OnInit {
     private router: ActivatedRoute,
     private toastr: ToastrService,
     private routerPath: Router
+
   ) { }
 
   ngOnInit() {
@@ -89,15 +90,15 @@ export class EventoDeportivoCreateComponent implements OnInit {
   }
 
   showError(error: string) {
-    this.toastr.error(error, "Error")
+   // this.toastr.error(error, "Error")
   }
 
   showWarning(warning: string) {
-    this.toastr.warning(warning, "Error de autenticación")
+   // this.toastr.warning(warning, "Error de autenticación")
   }
 
   showSuccess(ed: EventoDeportivo) {
-    this.toastr.success(`El evento deportivo ${ed.nombre_EventoDeportivo} fue creado`, "Creación exitosa");
+   // this.toastr.success(`El evento deportivo ${ed.nombre_EventoDeportivo} fue creado`, "Creación exitosa");
   }
 
 
@@ -108,5 +109,22 @@ export class EventoDeportivoCreateComponent implements OnInit {
     }
     return sum
   }
+
+  navegarClassicAlarm(){
+    this.routerPath.navigate([`/alarmaClasica/`])
+  }
+  
+  navegarVoiceAlarm(){
+    this.routerPath.navigate([`/alarmaVoz/`])  
+  }
+
+  navegarPersonalizedAlarm(){
+    this.routerPath.navigate([`/main-menu/`])  
+  }
+
+  navegarAlarmList(){
+    this.routerPath.navigate([`/main-menu/`])  
+  }
+
 
 }

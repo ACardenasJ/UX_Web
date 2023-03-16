@@ -1,61 +1,46 @@
 <!-- <app-header></app-header>  -->
 <div class="container text-center">
 <p class="fs-1" align=center>AlarmiDani</p>
-<div class="demo" style="float: right;">
-  <form class="form-search">
-    <div class="input-group">
-      <input class="form-control form-text searchTerm" maxlength="128" placeholder="Buscar" size="15" type="text" name="search" [(ngModel)]="searchText"/>
-      <!--<span class="input-group-btn inline-buttons"><button class="btn btn-primary"><i class="fa fa-search fa-lg">&nbsp;</i></button></span>-->
+<p class="fs-3" align=center>Alarma Clásica</p>
+
+
+  <div class="col-xs-2 col-lg-5 menu-izquierda">
+    <div class="row">
+      <div class="menu">
+
+        <div id="divRegistrar" class="col-12 text-center mt-3" (click)="navegarVoiceAlarm()">
+          <button id="btnRegistrar" type="submit" class="btn btn-warning col-8">Alarma con Voz</button>
+        </div>
+        <div id="divRegistrar" class="col-12 text-center mt-3" (click)="navegarPersonalizedAlarm()">
+          <button id="btnRegistrar" type="submit" class="btn btn-warning col-8">Alarma personalizada</button>
+        </div>
+        <div id="divRegistrar" class="col-12 text-center mt-3" (click)="navegarAlarmList()">
+          <button id="btnRegistrar" type="submit" class="btn btn-warning col-8">Lista de Alarmas</button>
+        </div>
+
+      </div>
     </div>
-  </form>
+  </div>
+
+  <div class="col-xs-2 col-lg-5 menu-derecha">
+  <div class="row">
+  
+        <p class="fs-5" align=left>Seleccione la fecha de inicio</p>
+        <figure><img src="../../../assets/Calendario.png" alt="" style="width: 100px;" align="left"></figure>
+        
+        <p class="fs-5" align=left>Seleccione la Hora de inicio</p>
+        <figure><img src="../../../assets/relog2.png" alt="" style="width: 100px;" align="left"></figure>
+
+        <p class="fs-5" align=left>Días en los que se repite la alarma</p>
+      <button type="button" class="btn btn-primary algo">Lunes</button>
+      <button type="button" class="btn btn-primary algo">Martes</button>
+      <button type="button" class="btn btn-primary algo">Miercoles</button>
+      <button type="button" class="btn btn-primary algo">Jueves</button>
+      <button type="button" class="btn btn-primary algo">Viernes</button>
+      <button type="button" class="btn btn-primary algo">Sabado</button>
+      <button type="button" class="btn btn-primary algo">Domingo</button>
+      <button type="button" class="btn btn-primary algo">Todos</button>
+    </div>
+  </div>
 </div>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Probabilidad</th>
-      <th scope="col">Estado</th>
-      <th scope="col">Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let competidor of competidores | filter:searchText; index as i">
-    <td>{{competidor.id}}</td>
-    <td>{{competidor.nombre_competidor}}</td>
-    <td>{{competidor.probabilidad}}</td>
-    <td>
-      <div *ngIf="competidor.estado == 'True'">
-        <div class="alert alert-success" role="alert" style="vertical-align: middle; display: inline;padding: 6px !important;">
-          Abierto
-        </div>
-      </div>
-      <div *ngIf="competidor.estado == 'False'">
-        <div class="alert alert-danger" role="alert" style="vertical-align: middle; display: inline;padding: 6px !important;">
-          Cerrado
-        </div>
-      </div>
-    </td>
-    <button type="button" class="btn btn-danger algo btnAct">Eliminar <i class="bi bi-trash3-fill"></i></button>
-    <button type="button" class="btn btn-outline-warning algo">Editar <i class="bi bi-pencil-square"></i></button>
-  </tr>
-  </tbody>
-</table>
-<!-- 
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav> -->
-<button type="button" class="btn btn-primary algo">Volver</button>
-<button type="button" class="btn btn-primary algo">Adicionar</button>
-<button type="button" class="btn btn-primary algo">Carrera</button>
 
