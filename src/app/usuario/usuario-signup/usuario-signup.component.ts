@@ -73,11 +73,11 @@ export class UsuarioSignupComponent implements OnInit {
   }
 
   navegarPersonalizedAlarm(){
-    this.router.navigate([`/main-menu/`])  
+    this.router.navigate([`/alarmaPersonalizada/`])  
   }
 
   navegarAlarmList(){
-    this.router.navigate([`/main-menu/`])  
+    this.router.navigate([`/listaAlarmas/`])  
   }
 
 

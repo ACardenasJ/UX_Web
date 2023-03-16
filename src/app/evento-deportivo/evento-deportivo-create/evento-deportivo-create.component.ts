@@ -119,11 +119,11 @@ export class EventoDeportivoCreateComponent implements OnInit {
   }
 
   navegarPersonalizedAlarm(){
-    this.routerPath.navigate([`/main-menu/`])  
+    this.routerPath.navigate([`/alarmaPersonalizada/`])  
   }
 
   navegarAlarmList(){
-    this.routerPath.navigate([`/main-menu/`])  
+    this.routerPath.navigate([`/listaAlarmas/`])  
   }
 
 

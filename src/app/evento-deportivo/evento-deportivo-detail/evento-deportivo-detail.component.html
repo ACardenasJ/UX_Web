@@ -1,61 +1,71 @@
-<div class="container">
+<!-- <app-header></app-header>  -->
+<div class="container text-center">
+  <p class="fs-1" align=center>AlarmiDani</p>
+  <p class="fs-3" align=center>Alarma Personalizada</p>
+  
+  
+    <div class="col-xs-2 col-lg-5 menu-izquierda">
+      <div class="row">
+        <div class="menu">
+  
+          <div id="divRegistrar" class="col-12 text-center mt-3" (click)="navegarClassicAlarm()">
+            <button id="btnRegistrar" type="submit" class="btn btn-warning col-8">Alarma Clasica</button>
+          </div>
+          <div id="divRegistrar" class="col-12 text-center mt-3" (click)="navegarVoiceAlarm()">
+            <button id="btnRegistrar" type="submit" class="btn btn-warning col-8">Alarma con Voz</button>
+          </div>
+          <div id="divRegistrar" class="col-12 text-center mt-3" (click)="navegarAlarmList()">
+            <button id="btnRegistrar" type="submit" class="btn btn-warning col-8">Lista de Alarmas</button>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-xs-2 col-lg-5 menu-derecha">
+    <div class="row">
+      <p class="fs-5" align=left>Ingrese el nombre de la alarma</p>
+          <div class="mb-0 row">
+            <div class="col-lg-9  ">
+              <input #usuario type="text" class="form-control" placeholder="nombre de la alarma">
+            </div>
+          </div>
+  
+          <p class="fs-5" align=left>Seleccione la fecha de inicio</p>
+          <figure><img src="../../../assets/Calendario.png" alt="" style="width: 60px;" align="left"></figure>
+          
+          <p class="fs-5" align=left>Seleccione la Hora de inicio</p>
+          <figure><img src="../../../assets/relog2.png" alt="" style="width: 60px;" align="left"></figure>
+  
+          <p class="fs-5" align=left>Días en los que se repite la alarma</p>
+          <button type="button" class="btn btn-primary algo">Lunes</button>
+          <button type="button" class="btn btn-primary algo">Martes</button>
+          <button type="button" class="btn btn-primary algo">Miercoles</button>
+          <button type="button" class="btn btn-primary algo">Jueves</button>
+          <button type="button" class="btn btn-primary algo">Viernes</button>
+          <button type="button" class="btn btn-primary algo">Sabado</button>
+          <button type="button" class="btn btn-primary algo">Domingo</button>
+          <button type="button" class="btn btn-primary algo">Todos</button>
+      </div>
+       <div class="row">
+    
+          <p class="fs-5" align=left>Presione el microfono si quiere grabar un sonido</p>
+          <figure><img src="../../../assets/microfone.png" alt="" style="width: 60px;" align="left"></figure>
+          
+          <p class="fs-5" align=left>Seleccione si quiere agregar un vide de youtube</p>
+          <figure><img src="../../../assets/logoyoutube.png" alt="" style="width: 60px;" align="left"></figure>
+  
+          <p class="fs-5" align=left>Ingrese la cantidad de veces que suena la larma antes de apagarse</p>
+          <div class="mb-0 row">
+            <div class="col-lg-9  ">
+              <input #usuario type="number" class="form-control" placeholder="numero">
+            </div>
+          </div>
 
-  <div class="row">
-    <div class="col-12 text-center mb-2">
-      <label class="fs-4 fw-bold">{{eventoD?.nombre_EventoDeportivo}}</label>
-      <button [disabled]="eventoD?.estado=='False'" *ngIf="eventoD" type="button" class="btn btn-outline-success ms-3 me-2"
-        (click)="goToEdit()" title="Editar Evento"><i class="bi bi-pencil-square"></i></button>
-      <button [disabled]="eventoD?.estado=='False'" *ngIf="eventoD" type="button" class="btn btn-outline-danger me-1"
-        (click)="eliminarEventoD()" title="Eliminar Evento"><i class="bi bi-trash"></i></button>
-      <button *ngIf="eventoD?.estado == 'True' && eventoD?.apuestas.length > 0" type="button"
-        class="btn btn-outline-success ms-1 me-2" (click)="terminarEventoD()" title="Terminar Evento"><i
-          class="bi bi-flag-fill"></i></button>
+          <p class="fs-5" align=left>Seleccione si quiere agregar un sonido que tenga almacendao en su dispositivo</p>
+          <figure><img src="../../../assets/galeriaSonidos.png" alt="" style="width: 60px;" align="left"></figure>
+       
+      </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-12 mt-3 mb-2 ms-2">
-      <h5>Competidores</h5>
-    </div>
-    <div class="col-12">
-      <table class="table table-hover table-bordered">
-        <thead class="table-light">
-          <tr>
-            <th scope="col" class="text-center">Competidor</th>
-            <th scope="col" class="text-center">Probabilidad de ganar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let competidor of eventoD?.competidores">
-            <td>{{competidor.nombre_competidor}}</td>
-            <td class="text-center">{{competidor.probabilidad | number:'1.2-2'}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div *ngIf="eventoD?.apuestas.length > 0" class="row">
-    <div class="col-12 mt-3 mb-2 ms-2">
-      <h5>Apuestas</h5>
-    </div>
-    <div class="col-12">
-      <table class="table table-hover table-bordered">
-        <thead class="table-light">
-          <tr>
-            <th scope="col" class="text-center">Apostador</th>
-            <th scope="col" class="text-center">Competidor</th>
-            <th scope="col" class="text-center">Valor apostado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let apuesta of eventoD?.apuestas">
-            <td>Apostador {{apuesta.id_apostador}}</td>
-            <td class="text-center">{{ getCompetidor(apuesta.id_competidor) }}</td>
-            <td class="text-center">{{apuesta.valor_apostado | number:'1.2-2'}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+  

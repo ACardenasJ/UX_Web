@@ -106,4 +106,20 @@ export class EventoDeportivoDetailComponent implements OnInit {
     this.toastr.warning(warning, "Funcion fuera se servicio")
   }
 
+  navegarClassicAlarm(){
+    this.routerPath.navigate([`/alarmaClasica/`])
+  }
+  
+  navegarVoiceAlarm(){
+    this.routerPath.navigate([`/alarmaVoz/`])  
+  }
+
+  navegarPersonalizedAlarm(){
+    this.routerPath.navigate([`/alarmaPersonalizada/`])  
+  }
+
+  navegarAlarmList(){
+    this.routerPath.navigate([`/main-menu/`])  
+  }
+
 }

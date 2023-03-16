@@ -13,6 +13,7 @@ import { UsuarioSignupComponent } from './usuario/usuario-signup/usuario-signup.
 import { CompetidorListComponent } from './competidor/competidor-list/competidor-list.component';
 import { EventoDeportivoListComponent} from './evento-deportivo/evento-deportivo-list/evento-deportivo-list.component';
 import { EventoDeportivoCreateComponent } from './evento-deportivo/evento-deportivo-create/evento-deportivo-create.component';
+import { EventoDeportivoDetailComponent } from './evento-deportivo/evento-deportivo-detail/evento-deportivo-detail.component';
 
 const routes: Routes = [
   {
@@ -34,41 +35,12 @@ const routes: Routes = [
     component: EventoDeportivoCreateComponent
   },
   {
-    path: 'eventosd/:userId/:userToken',
+    path: 'alarmaPersonalizada',
+    component: EventoDeportivoDetailComponent
+  },
+  {
+    path: 'listaAlarmas',
     component: EventoDeportivoListComponent
-  },
-
-  {
-    path: 'carreras/:userId/:userToken',
-    component: CarreraListComponent
-  },
-  {
-    path: 'carreras/crear/:userId/:userToken',
-    component: CarreraCreateComponent
-  },
-  {
-    path: 'carreras/editar/:carreraId/:userId/:userToken',
-    component: CarreraEditComponent
-  },
-  {
-    path: 'carreras/terminar/:carreraId/:userId/:userToken',
-    component: CarreraFinishComponent
-  },
-  {
-    path: 'carreras/reporte/:carreraId/:userId/:userToken',
-    component: CarreraReportComponent
-  },
-  {
-    path: 'apuestas/:userId/:userToken',
-    component: ApuestaListComponent
-  },
-  {
-    path: 'apuestas/crear/:userId/:userToken',
-    component: ApuestaCreateComponent
-  },
-  {
-    path: 'apuestas/editar/:apuestaId/:userId/:userToken',
-    component: ApuestaEditComponent
   }
 ];
 

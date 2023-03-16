@@ -37,11 +37,11 @@ export class CompetidorListComponent implements OnInit {
   }
 
   navegarPersonalizedAlarm(){
-    this.router.navigate([`/main-menu/`])  
+    this.router.navigate([`alarmaPersonalizada/`])  
   }
 
   navegarAlarmList(){
-    this.router.navigate([`/main-menu/`])  
+    this.router.navigate([`/listaAlarmas/`])  
   }
 
 
