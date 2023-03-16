@@ -20,11 +20,11 @@ export class EventoDeportivoListComponent implements OnInit {
 
   page: number = 1;
   itemPP: number = 5;
-
+  lista = ["Selecione la alarma que desea ver:", "Alarma Clasica1", "Alarma Personalizada5", "Alarma con Voz3", "Alarma Personalizada Andres"]
   constructor(
     private eventoservice: EventoDeportivoService,
     private userService: UsuarioService,
-    private routerpath: Router,
+    private routerPath: Router,
     private toastr: ToastrService,
     private router: ActivatedRoute) {
   }
@@ -43,7 +43,7 @@ export class EventoDeportivoListComponent implements OnInit {
 
   ngOnInit() {
     if (!parseInt(this.router.snapshot.params.userId) || this.router.snapshot.params.userToken === " ") {
-      this.showError("No hemos podido identificarlo, por favor vuelva a iniciar sesión.")
+      //this.showError("No hemos podido identificarlo, por favor vuelva a iniciar sesión.")
     }
     else {
       this.userId = parseInt(this.router.snapshot.params.userId)
@@ -62,13 +62,13 @@ export class EventoDeportivoListComponent implements OnInit {
     error => {
       //console.log(error)
       if (error.statusText === "UNAUTHORIZED") {
-        this.showWarning("Su sesión ha caducado, por favor vuelva a iniciar sesión.")
+       // this.showWarning("Su sesión ha caducado, por favor vuelva a iniciar sesión.")
       }
       else if (error.statusText === "UNPROCESSABLE ENTITY") {
-        this.showError("No hemos podido identificarlo, por favor vuelva a iniciar sesión.")
+        //this.showError("No hemos podido identificarlo, por favor vuelva a iniciar sesión.")
       }
       else {
-        this.showError("Ha ocurrido un error. " + error.message)
+       // this.showError("Ha ocurrido un error. " + error.message)
       }
     });
   }
@@ -151,13 +151,13 @@ export class EventoDeportivoListComponent implements OnInit {
     error => {
       //console.log(error)
       if (error.statusText === "UNAUTHORIZED") {
-        this.showWarning("Su sesión ha caducado, por favor vuelva a iniciar sesión.")
+        //this.showWarning("Su sesión ha caducado, por favor vuelva a iniciar sesión.")
       }
       else if (error.statusText === "UNPROCESSABLE ENTITY") {
-        this.showError("No hemos podido identificarlo, por favor vuelva a iniciar sesión.")
+        //this.showError("No hemos podido identificarlo, por favor vuelva a iniciar sesión.")
       }
       else {
-        this.showError("Ha ocurrido un error. " + error.message)
+        //this.showError("Ha ocurrido un error. " + error.message)
       }
     });
   }
@@ -171,15 +171,36 @@ export class EventoDeportivoListComponent implements OnInit {
     error => {
       //console.log(error)
       if (error.statusText === "UNAUTHORIZED") {
-        this.showWarning("Su sesión ha caducado, por favor vuelva a iniciar sesión.")
+        //this.showWarning("Su sesión ha caducado, por favor vuelva a iniciar sesión.")
       }
       else if (error.statusText === "UNPROCESSABLE ENTITY") {
-        this.showError("No hemos podido identificarlo, por favor vuelva a iniciar sesión.")
+        //this.showError("No hemos podido identificarlo, por favor vuelva a iniciar sesión.")
       }
       else {
-        this.showError("Ha ocurrido un error. " + error.message)
+        //this.showError("Ha ocurrido un error. " + error.message)
       }
     });
   }
+
+  navegarClassicAlarm(){
+    this.routerPath.navigate([`/alarmaClasica/`])
+  }
+  
+  navegarVoiceAlarm(){
+    this.routerPath.navigate([`/alarmaVoz/`])  
+  }
+
+  navegarPersonalizedAlarm(){
+    this.routerPath.navigate([`/alarmaPersonalizada/`])  
+  }
+
+  navegarAlarmList(){
+    this.routerPath.navigate([`/listaAlarmas/`])  
+  }
+
+  navegarOrigen(){
+    this.routerPath.navigate([`/main-menu/`])  
+  }
+
 
 }

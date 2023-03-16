@@ -43,6 +43,9 @@ export class CompetidorListComponent implements OnInit {
   navegarAlarmList(){
     this.router.navigate([`/listaAlarmas/`])  
   }
+  navegarOrigen(){
+    this.router.navigate([`/main-menu/`])  
+  }
 
 
 }

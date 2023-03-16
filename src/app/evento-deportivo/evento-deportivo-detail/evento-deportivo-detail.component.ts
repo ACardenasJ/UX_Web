@@ -119,6 +119,9 @@ export class EventoDeportivoDetailComponent implements OnInit {
   }
 
   navegarAlarmList(){
+    this.routerPath.navigate([`/listaAlarmas/`])  
+  }
+  navegarOrigen(){
     this.routerPath.navigate([`/main-menu/`])  
   }
 
