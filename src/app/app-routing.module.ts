@@ -26,13 +26,13 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'signup',
+    path: 'main-menu',
     component: UsuarioSignupComponent,
     pathMatch: 'full'
   },
   {
 
-    path: 'competidores/:userId/:userToken',
+    path: 'alarmaClasica',
     component: CompetidorListComponent
   },
   {

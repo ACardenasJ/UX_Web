@@ -64,4 +64,21 @@ export class UsuarioSignupComponent implements OnInit {
     this.toastr.success(`Se ha registrado exitosamente`, "Registro exitoso");
   }
 
+  navegarClassicAlarm(){
+    this.router.navigate([`/alarmaClasica/`])
+  }
+  
+  navegarVoiceAlarm(){
+    this.router.navigate([`/main-menu/`])  
+  }
+
+  navegarPersonalizedAlarm(){
+    this.router.navigate([`/main-menu/`])  
+  }
+
+  navegarAlarmList(){
+    this.router.navigate([`/main-menu/`])  
+  }
+
+
 }

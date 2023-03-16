@@ -33,7 +33,7 @@ export class UsuarioLoginComponent implements OnInit {
        // error => {
          // this.error = true
         //})
-      this.router.navigate([`/signup/`])
+      this.router.navigate([`/main-menu/`])
   }
 
 }
