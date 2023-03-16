@@ -25,14 +25,15 @@ export class UsuarioLoginComponent implements OnInit {
   onLogInUsuario(usuario: string, contrasena: string) {
     this.error = false
 
-    this.usuarioService.userLogIn(usuario, contrasena)
-      .subscribe(res => {
-        const decodedToken = this.helper.decodeToken(res.token);
-        this.router.navigate([`/eventosd/${decodedToken.sub}/${res.token}`])
-      },
-        error => {
-          this.error = true
-        })
+    //this.usuarioService.userLogIn(usuario, contrasena)
+      //.subscribe(res => {
+       // const decodedToken = this.helper.decodeToken(res.token);
+        //this.router.navigate([`/eventosd/${decodedToken.sub}/${res.token}`])
+      //},
+       // error => {
+         // this.error = true
+        //})
+      this.router.navigate([`/signup/`])
   }
 
 }

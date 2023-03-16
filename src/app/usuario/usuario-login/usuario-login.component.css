@@ -1,0 +1,7 @@
+
+.logo-body {
+    display: flex;
+    grid-template-columns:30% 20% 20%;
+    align-items: center; 
+
+  }

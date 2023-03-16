@@ -12,7 +12,6 @@ import { UsuarioLoginComponent } from './usuario/usuario-login/usuario-login.com
 import { UsuarioSignupComponent } from './usuario/usuario-signup/usuario-signup.component';
 import { CompetidorListComponent } from './competidor/competidor-list/competidor-list.component';
 import { EventoDeportivoListComponent} from './evento-deportivo/evento-deportivo-list/evento-deportivo-list.component';
-import {EventoDeportivoDetailComponent} from './evento-deportivo/evento-deportivo-detail/evento-deportivo-detail.component';
 import { EventoDeportivoCreateComponent } from './evento-deportivo/evento-deportivo-create/evento-deportivo-create.component';
 
 const routes: Routes = [
